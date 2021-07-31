@@ -1,7 +1,16 @@
 <h1><%= @list.name %></h1>
 
 <% @list.movies.each do |movie| %>
-  <%= movie.title %>
+  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+  <ul>
+    <li>
+      <h4><%= movie.title %></h4>
+    </li>
+    <li>Overview: <%= movie.overview %></li>
+    <li>Comment: <%= bookmark.comment %></li>
+    <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure ?'} %>
+  </ul>
 <% end %>
 
 <%= link_to "Back to the index", lists_path %>
+<%= link_to "Add a movie",  new_list_bookmark_path(@list) %>
