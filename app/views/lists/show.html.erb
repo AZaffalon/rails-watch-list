@@ -6,7 +6,7 @@
     <li>
       <h4><%= movie.title %></h4>
     </li>
-    <%= image_tag movie.poster_url %>
+    <%= image_tag movie.poster_url, alt: movie.title %>
     <li>Overview: <%= movie.overview %></li>
     <li>Comment: <%= bookmark.comment %></li>
     <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure ?'} %>
