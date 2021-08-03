@@ -10,3 +10,23 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar{
+  height: 50px;
+  width: 100%;
+  background-color: aquamarine;
+  a {
+    position: fixed;
+    right: 20px;
+    color: white;
+    &:hover{
+      text-decoration: none;
+      color: black;
+    }
+  }
+  
+  .logo{
+    position: fixed;
+    right: 50%;
+  }
+}
